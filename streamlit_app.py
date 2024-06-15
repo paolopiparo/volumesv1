@@ -10,16 +10,19 @@ st.title('Volumes Tables')
 
 st.subheader('Historical Volumes')
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-  options = ["Option 1", "Option 2", "Option 3"]
-  selected_option = st.selectbox("Select and option:", options)
+  options = ["Cumulative Volumes", "Standard Deviation", "% vs Average", "DV01 vs average"]
+  selected_option = st.selectbox("Select feature:", options)
 with col2:
   selected_date = st.date_input("Select a date:", value=date.today())
 with col3:
   radio_options = ["Choice 1", "Choice 2", "Choice 3"]
   selected_radio = st.radio("Select one:", radio_options)
+with col4:
+  slider_values = [5, 10, 15, 20, 30, 40, 50]
+  slider = st.select_slider("Select Average period:, options=slider_values, value=slider_values[0])
 
 # Load data
 #path = 
