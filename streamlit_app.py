@@ -9,7 +9,7 @@ st.title('Volumes Tables')
 
 st.subheader('Historical Volumes')
 
-col1, col2 = st.column(2)
+col1, col2 = st.columns(2)
 
 with col1:
   options = ["Option 1", "Option 2", "Option 3"]
