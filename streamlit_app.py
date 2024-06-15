@@ -26,7 +26,11 @@ slider = st.select_slider("Select Average period:", options=slider_values, value
 
 # Load data
 #path = "V:/piparp/BACKTESTS/Volume_NC_Project/Backup/Testing/all/Tables_Historical/"
-df = pd.read_csv('cum_volume_random.csv')
+
+csv_url = "https://github.com/paolopiparo/volumesv1/blob/master/data/cum_volume_random.csv"
+df = pd.read_csv(csv_url)
+st.write(df)
+
 #df.year = df.year.astype('int')
 
 # Input widgets
@@ -46,7 +50,7 @@ df = pd.read_csv('cum_volume_random.csv')
 
 # Display DataFrame
 
-df_editor = st.data_editor(df, height=212, use_container_width=True,
+#df_editor = st.data_editor(df, height=212, use_container_width=True,
                             num_rows="dynamic")
 #df_chart = pd.melt(df_editor.reset_index(), id_vars='year', var_name='genre', value_name='gross')
 
