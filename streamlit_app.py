@@ -11,7 +11,7 @@ st.title('Volumes Tables')
 st.subheader('Historical Volumes')
 
 df = pd.read_csv('data/cum_volume_random.csv')
-df.rename(columns={df.columns[0]:"Interval"]}, inplace=True)
+df.rename(columns={df.columns[0]:"Interval"}, inplace=True)
 
 col1, col2, col3, col4 = st.columns(4)
 
