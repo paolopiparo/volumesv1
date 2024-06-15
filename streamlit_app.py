@@ -3,8 +3,9 @@ import numpy as np
 import pandas as pd
 import altair as alt
 from datetime import date
-import seaborn 
+import matplotlib.pyplot as plt
 
+st.write(df.style.background_gradient(cmap=cmap,vmin=(-0.015),vmax=0.015,axis=None).to_html(), unsafe_allow_html=True)
 # Page title
 st.set_page_config(page_title='Volumes Tables', page_icon='📊')
 st.title('Volumes Tables')
@@ -32,12 +33,13 @@ with col4:
 future_list = df.columns.tolist()
 genres_selection = st.multiselect('Exclude Future', future_list)
 
-cm = sns.light_palette('blue', as_cmap=True)
+#Just colouring
+cmap = plt.cm.get_cmap('RdYlGn')
 
 if genres_selection:
   
   filtered_df = df.drop(columns=genres_selection)
-  st.write(filtered_df.style.background_gradient(cmap=cm))
+  st.write(filtered_df.style.background_gradient(cmap=cmap,vmin=(-0.015),vmax=0.015,axis=None))
 else:
   st.write(df)
 
