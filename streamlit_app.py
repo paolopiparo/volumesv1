@@ -13,7 +13,7 @@ options = ["Option 1", "Option 2", "Option 3"]
 selected_option = st.selectbox("Select and option:", options)
 
 # Load data
-path = 
+#path = 
 df = pd.read_csv('data/movies_genres_summary.csv')
 df.year = df.year.astype('int')
 
