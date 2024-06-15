@@ -3,9 +3,7 @@ import numpy as np
 import pandas as pd
 import altair as alt
 from datetime import date
-import seaborn as sns
-
-
+import seaborn 
 
 # Page title
 st.set_page_config(page_title='Volumes Tables', page_icon='📊')
