@@ -1,2 +1,2 @@
 streamlit>=1.26.0
-matplotlib.pyplot
+matplotlib==3.9.0
