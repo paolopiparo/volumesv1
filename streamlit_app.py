@@ -9,8 +9,14 @@ st.title('Volumes Tables')
 
 st.subheader('Historical Volumes')
 
-options = ["Option 1", "Option 2", "Option 3"]
-selected_option = st.selectbox("Select and option:", options)
+col1, col2 = st.column(2)
+
+with col1:
+  options = ["Option 1", "Option 2", "Option 3"]
+  selected_option = st.selectbox("Select and option:", options)
+with col2:
+  selected_date = st.date_input("Select a date:", value=date.today())
+
 
 # Load data
 #path = 
