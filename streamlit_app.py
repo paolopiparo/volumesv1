@@ -44,7 +44,7 @@ if genres_selection:
   filtered_df = df.drop(columns=genres_selection)
   filtered_df.style.applymap(color_scale)
   #st.write(filtered_df)
-  st.dataframe(filtered_df, unsafe_allow_html=True)
+  st.dataframe(filtered_df)
 else:
   st.write(df)
 
