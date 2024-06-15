@@ -27,8 +27,8 @@ slider = st.select_slider("Select Average period:", options=slider_values, value
 # Load data
 #path = "V:/piparp/BACKTESTS/Volume_NC_Project/Backup/Testing/all/Tables_Historical/"
 
-csv_url = "https://github.com/paolopiparo/volumesv1/blob/master/data/cum_volume_random.csv"
-df = pd.read_csv(csv_url)
+#csv_url = "https://github.com/paolopiparo/volumesv1/blob/master/data/cum_volume_random.csv"
+df = pd.read_csv('data/cum_volume_random.csv')
 st.write(df)
 
 #df.year = df.year.astype('int')
