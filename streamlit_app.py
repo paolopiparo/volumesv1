@@ -4,18 +4,16 @@ import pandas as pd
 import altair as alt
 
 # Page title
-st.set_page_config(page_title='Interactive Data Explorer', page_icon='📊')
-st.title('📊 Interactive Data Explorer')
+st.set_page_config(page_title='Volumes Tables', page_icon='📊')
+st.title('Volumes Tables')
 
-with st.expander('About this app'):
-  st.markdown('**What can this app do?**')
-  st.info('This app shows the use of Pandas for data wrangling, Altair for chart creation and editable dataframe for data interaction.')
-  st.markdown('**How to use the app?**')
-  st.warning('To engage with the app, 1. Select genres of your interest in the drop-down selection box and then 2. Select the year duration from the slider widget. As a result, this should generate an updated editable DataFrame and line plot.')
-  
-st.subheader('Which Movie Genre performs ($) best at the box office?')
+st.subheader('Historical Volumes')
+
+options = ["Option 1", "Option 2", "Option 3"]
+selected_option = st.selectbox("Select and option:", options)
 
 # Load data
+path = 
 df = pd.read_csv('data/movies_genres_summary.csv')
 df.year = df.year.astype('int')
 
