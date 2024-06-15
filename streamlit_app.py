@@ -10,14 +10,16 @@ st.title('Volumes Tables')
 
 st.subheader('Historical Volumes')
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(3)
 
 with col1:
   options = ["Option 1", "Option 2", "Option 3"]
   selected_option = st.selectbox("Select and option:", options)
 with col2:
   selected_date = st.date_input("Select a date:", value=date.today())
-
+with col3:
+  radio_options = ["Choice 1", "Choice 2", "Choice 3"]
+  selected_radio = st.radio("Select one:", radio_options)
 
 # Load data
 #path = 
