@@ -25,8 +25,8 @@ slider_values = [5, 10, 15, 20, 30, 40, 50]
 slider = st.select_slider("Select Average period:", options=slider_values, value=slider_values[0])
 
 # Load data
-path = "V:/piparp/BACKTESTS/Volume_NC_Project/Backup/Testing/all/Tables_Historical/"
-df = pd.read_csv(path+'cum_volume.csv')
+#path = "V:/piparp/BACKTESTS/Volume_NC_Project/Backup/Testing/all/Tables_Historical/"
+df = pd.read_csv('cum_volume_random.csv')
 #df.year = df.year.astype('int')
 
 # Input widgets
