@@ -22,7 +22,7 @@ with col3:
   selected_radio = st.radio("Select one:", radio_options)
 with col4:
   slider_values = [5, 10, 15, 20, 30, 40, 50]
-  slider = st.select_slider("Select Average period:, options=slider_values, value=slider_values[0])
+  slider = st.select_slider("Select Average period:", options=slider_values, value=slider_values[0])
 
 # Load data
 #path = 
