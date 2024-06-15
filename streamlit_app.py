@@ -50,16 +50,7 @@ st.write(df)
 
 # Display DataFrame
 
-#df_editor = st.data_editor(df, height=212, use_container_width=True,
-                            num_rows="dynamic")
+#df_editor = st.data_editor(df, height=212, use_container_width=True, num_rows="dynamic")
 #df_chart = pd.melt(df_editor.reset_index(), id_vars='year', var_name='genre', value_name='gross')
 
-# Display chart
-"""
-chart = alt.Chart(df_chart).mark_line().encode(
-            x=alt.X('year:N', title='Year'),
-            y=alt.Y('gross:Q', title='Gross earnings ($)'),
-            color='genre:N'
-            ).properties(height=320)
-st.altair_chart(chart, use_container_width=True)
-"""
+
