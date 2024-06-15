@@ -10,6 +10,7 @@ st.title('Volumes Tables')
 
 st.subheader('Historical Volumes')
 
+#Read CSV from hub
 df = pd.read_csv('data/cum_volume_random.csv')
 df.rename(columns={df.columns[0]:"Interval"}, inplace=True)
 
@@ -30,34 +31,24 @@ with col4:
 future_list = df.columns.tolist()
 genres_selection = st.multiselect('Exclude Future', future_list)
 
+# Apply conditional formatting
+def color_scale(val):
+    normalized = (val - df.min()) / (df.max() - df.min())
+    r = int(255 * (1 - normalized))
+    g = int(255 * normalized)
+    b = 0
+    return f'background-color: rgb({r},{g},{b})'
 
 if genres_selection:
   
   filtered_df = df.drop(columns=genres_selection)
-  st.write(filtered_df)
+  filtered_df.style.applymap(color_scale)
+  #st.write(filtered_df)
+  st.dataframe(filtered_df, unsafe_allow_html=True)
 else:
   st.write(df)
 
-#df.year = df.year.astype('int')
-
-# Input widgets
-## Genres selection
-#genres_list = df.genre.unique()
-#genres_selection = st.multiselect('Select genres', genres_list, ['Action', 'Adventure', 'Biography', 'Comedy', 'Drama', 'Horror'])
-
-## Year selection
-#year_list = df.year.unique()
-#year_selection = st.slider('Select year duration', 1986, 2006, (2000, 2016))
-#year_selection_list = list(np.arange(year_selection[0], year_selection[1]+1))
-
-#df_selection = df[df.genre.isin(genres_selection) & df['year'].isin(year_selection_list)]
-#reshaped_df = df_selection.pivot_table(index='year', columns='genre', values='gross', aggfunc='sum', fill_value=0)
-#reshaped_df = reshaped_df.sort_values(by='year', ascending=False)
 
 
-# Display DataFrame
-
-#df_editor = st.data_editor(df, height=212, use_container_width=True, num_rows="dynamic")
-#df_chart = pd.melt(df_editor.reset_index(), id_vars='year', var_name='genre', value_name='gross')
 
 
