@@ -32,21 +32,22 @@ future_list = df.columns.tolist()
 genres_selection = st.multiselect('Exclude Future', future_list)
 
 # Apply conditional formatting
-def color_scale(val):
-    normalized = (val - df.min()) / (df.max() - df.min())
+def gradient_bgcolor(val, vmin, vmax):
+    normalized = (val - vmin) / (vmax - vmin)
     r = int(255 * (1 - normalized))
     g = int(255 * normalized)
     b = 0
     return f'background-color: rgb({r},{g},{b})'
 
-if genres_selection:
-  
-  filtered_df = df.drop(columns=genres_selection)
-  filtered_df.style.applymap(color_scale)
-  #st.write(filtered_df)
-  st.dataframe(filtered_df)
-else:
-  st.write(df)
+
+
+# Display the DataFrame with conditional background coloring
+st.write("Styled DataFrame:")
+for col in df.columns:
+    # Find min and max for each column
+    vmin, vmax = df[col].min(), df[col].max()
+    # Apply conditional formatting using pandas style.applymap
+    st.write(df[col].apply(lambda x: f'background-color: {gradient_bgcolor(x, vmin, vmax)}'), unsafe_allow_html=True)
 
 
 
