@@ -14,12 +14,12 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
   options = ["Cumulative Volumes", "Standard Deviation", "% vs Average", "DV01 vs average"]
-  selected_option = st.selectbox("Select feature:", options)
+  selected_option = st.selectbox("Select a feature:", options)
 with col2:
   selected_date = st.date_input("Select a date:", value=date.today())
 with col3:
-  radio_options = ["Choice 1", "Choice 2", "Choice 3"]
-  selected_radio = st.radio("Select one:", radio_options)
+  radio_options = ["5 Minutes", "10 Minutes", "15 Minutes"]
+  selected_radio = st.radio("Select interval:", radio_options)
 
 slider_values = [5, 10, 15, 20, 30, 40, 50]
 slider = st.select_slider("Select Average period:", options=slider_values, value=slider_values[0])
